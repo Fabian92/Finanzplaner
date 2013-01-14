@@ -1,0 +1,33 @@
+<%= form_for(@finanz) do |f| %>
+  <% if @finanz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@finanz.errors.count, "error") %> prohibited this finanz from being saved:</h2>
+
+      <ul>
+      <% @finanz.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Title %><br />
+    <%= f.text_field :Title %>
+  </div>
+  <div class="field">
+    <%= f.label :Datum %><br />
+    <%= f.date_select :Datum %>
+  </div>
+  <div class="field">
+    <%= f.label :Zahlungstyp %><br />
+    <%= f.text_field :Zahlungstyp %>
+  </div>
+  <div class="field">
+    <%= f.label :Wert %><br />
+    <%= f.text_field :Wert %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

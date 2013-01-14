@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @finanz.Title %>
+</p>
+
+<p>
+  <b>Datum:</b>
+  <%= @finanz.Datum %>
+</p>
+
+<p>
+  <b>Zahlungstyp:</b>
+  <%= @finanz.Zahlungstyp %>
+</p>
+
+<p>
+  <b>Wert:</b>
+  <%= @finanz.Wert %>
+</p>
+
+
+<%= link_to 'Edit', edit_finanz_path(@finanz) %> |
+<%= link_to 'Back', finanzs_path %>

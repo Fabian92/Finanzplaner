@@ -1,8 +1,11 @@
 Finanzplan::Application.routes.draw do
 
+  resources :finanzs
+
+
   devise_for :users
 
-  root :to => "home#index"
+  root :to => "home#finanzs"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

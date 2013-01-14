@@ -1,0 +1,29 @@
+<h1>Finanzenübersicht</h1>
+
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>Datum</th>
+    <th>Zahlungstyp</th>
+    <th>Wert</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @finanzs.each do |finanz| %>
+  <tr>
+    <td><%= finanz.Title %></td>
+    <td><%= finanz.Datum %></td>
+    <td><%= finanz.Zahlungstyp %></td>
+    <td><%= finanz.Wert %></td>
+    <td><%= link_to 'Show', finanz %></td>
+    <td><%= link_to 'Edit', edit_finanz_path(finanz) %></td>
+    <td><%= link_to 'Destroy', finanz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Finanz', new_finanz_path %>
