@@ -8,6 +8,9 @@ gem 'rails', '3.2.9'
 gem 'sqlite3'
 gem 'devise'
 gem "capybara"
+gem 'activeadmin'
+gem 'cancan'
+gem 'rolify'
 
 group :development, :test do
   gem 'rspec-rails'
