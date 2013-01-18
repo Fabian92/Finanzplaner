@@ -1,6 +1,8 @@
 class FinanzsController < ApplicationController
   # GET /finanzs
   # GET /finanzs.json
+   load_and_authorize_resource
+
   def index
     @finanzs = Finanz.all
 
