@@ -8,13 +8,16 @@ class Ability
             can :manage, :all
         else
             #Registered users
-            can :read, :all
+            can :create, Finanz
+            can :manage, Finanz do |finanz|
+          finanz.users.include? user
+      end
         end
     else
         #Guest users
         can :read, :all
-        end
     end
+end
 end
     # Define abilities for the passed in user here. For example:
     #
@@ -38,5 +41,4 @@ end
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
-  end
-end
+

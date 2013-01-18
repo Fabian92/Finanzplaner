@@ -1,7 +1,7 @@
 <h1>Finanzenübersicht</h1>
 
 <table>
-  <tr>
+  <!--<tr>
     <th>Titel</th>
     <th>Datum</th>
     <th>Zahlungstyp</th>
@@ -9,21 +9,34 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+  </tr>-->
 
 <% @finanzs.each do |finanz| %>
   <tr>
-    <td><%= finanz.Title %></td>
-    <td><%= finanz.Datum %></td>
-    <td><%= finanz.Zahlungstyp %></td>
-    <td><%= finanz.Wert %></td>
-    <td><%= link_to 'Show', finanz %></td>
-    <td><%= link_to 'Edit', edit_finanz_path(finanz) %></td>
-    <td><%= link_to 'Destroy', finanz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= finanz.Title %>
+    <!--<%= finanz.Datum %>-->
+    <%= finanz.Zahlungstyp %>
+    <%= finanz.Wert %>
+    <% if can?(:read, Finanz) %>
+      <%= link_to 'Show', finanz if can?(:read, Finanz)%>
+      <% end %>
+    </td>
+    <td>
+      <% if can?(:update, Finanz) %>
+        <%= link_to 'Edit', edit_finanz_path(finanz) %>
+      <% end %>
+    </td>
+    <td>
+      <% if can?(:delete, Finanz) %>
+      <%= link_to 'Destroy', finanz, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
+<% if can?(:create, Finanz) %>
 <%= link_to 'New Finanz', new_finanz_path %>
+<% end %>
