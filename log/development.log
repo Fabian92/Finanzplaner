@@ -7578,3 +7578,200 @@ SyntaxError (/Users/Jannik/we2/Finanzplaner/app/models/ability.rb:41: syntax err
   Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
   Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
   Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/admin" for 127.0.0.1 at 2013-01-18 15:10:43 +0100
+Processing by Admin::DashboardController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 3 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/activeadmin-0.5.1/app/views/active_admin/page/index.html.arb (479.8ms)
+Completed 200 OK in 687ms (Views: 505.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-01-18 15:10:44 +0100
+Served asset /active_admin.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-01-18 15:10:44 +0100
+Served asset /active_admin.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-01-18 15:10:44 +0100
+Served asset /active_admin/print.css - 304 Not Modified (3ms)
+
+
+Started GET "/admin/finanzs" for 127.0.0.1 at 2013-01-18 15:10:45 +0100
+Processing by Admin::FinanzsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = 3 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "finanzs" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "finanzs" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "finanzs" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mFinanz Load (0.2ms)[0m  SELECT "finanzs".* FROM "finanzs" ORDER BY "finanzs"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (447.6ms)
+Completed 200 OK in 462ms (Views: 452.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-01-18 15:10:46 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-01-18 15:10:46 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-01-18 15:10:46 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/finanzs" for 127.0.0.1 at 2013-01-18 15:10:59 +0100
+Processing by FinanzsController#index as HTML
+Completed 500 Internal Server Error in 8ms
+
+SyntaxError (/Users/Jannik/we2/Finanzplaner/app/models/ability.rb:41: syntax error, unexpected keyword_end, expecting $end):
+  activesupport (3.2.9) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.9) lib/active_support/dependencies.rb:190:in `const_missing'
+  cancan (1.6.8) lib/cancan/controller_additions.rb:352:in `current_ability'
+  cancan (1.6.8) lib/cancan/controller_resource.rb:207:in `current_ability'
+  cancan (1.6.8) lib/cancan/controller_resource.rb:77:in `load_collection?'
+  cancan (1.6.8) lib/cancan/controller_resource.rb:33:in `load_resource'
+  cancan (1.6.8) lib/cancan/controller_resource.rb:25:in `load_and_authorize_resource'
+  cancan (1.6.8) lib/cancan/controller_resource.rb:10:in `block in add_before_filter'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:418:in `_run__3535807420519469103__process_action__1212805544483677802__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.9) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.9) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.9) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.9) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.9) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.9) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.9) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.9) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.9) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.9) lib/action_dispatch/routing/route_set.rb:601:in `call'
+  warden (1.2.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.9) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.9) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `_run__1286846915531746308__call__633724382048892425__callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.9) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.9) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.9) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.9) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.9) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.9) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.9) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.9) lib/rails/engine.rb:479:in `call'
+  railties (3.2.9) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.9) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Jannik/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/Jannik/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/Jannik/.rvm/rubies/ruby-1.9.3-p327/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+  Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/Jannik/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/finanzs" for 127.0.0.1 at 2013-01-18 15:11:36 +0100
+Processing by FinanzsController#index as HTML
+  [1m[36mFinanz Load (0.1ms)[0m  [1mSELECT "finanzs".* FROM "finanzs" [0m
+  Rendered finanzs/index.html.erb within layouts/application (7.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+  Rendered shared/_navigation.html.erb (74.2ms)
+Completed 200 OK in 259ms (Views: 246.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.dropdown-menu.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/components/jquery.aa.dropdown-menu.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/lib/namespace.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/lib/namespace.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/components/jquery.aa.checkbox-toggler.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.popover.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/components/jquery.aa.popover.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery-ui.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /jquery-ui.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin/pages/batch_actions.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/pages/batch_actions.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/pages/application.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/pages/application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/active_admin/components/jquery.aa.table-checkbox-toggler.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/components/jquery.aa.table-checkbox-toggler.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/active_admin/application.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/active_admin/base.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin/base.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/active_admin.js?body=1" for 127.0.0.1 at 2013-01-18 15:11:37 +0100
+Served asset /active_admin.js - 304 Not Modified (71ms)
