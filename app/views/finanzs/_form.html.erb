@@ -1,33 +1,32 @@
-<%= form_for(@finanz) do |f| %>
-  <% if @finanz.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@finanz.errors.count, "error") %> prohibited this finanz from being saved:</h2>
-
-      <ul>
-      <% @finanz.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @finanz, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :Title, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Title, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :Datum, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :Datum, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Zahlungstyp, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Zahlungstyp, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Wert, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Wert, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :Title %><br />
-    <%= f.text_field :Title %>
-  </div>
-  <div class="field">
-    <%= f.label :Datum %><br />
-    <%= f.date_select :Datum %>
-  </div>
-  <div class="field">
-    <%= f.label :Zahlungstyp %><br />
-    <%= f.text_field :Zahlungstyp %>
-  </div>
-  <div class="field">
-    <%= f.label :Wert %><br />
-    <%= f.text_field :Wert %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                finanzs_path, :class => 'btn' %>
   </div>
 <% end %>
