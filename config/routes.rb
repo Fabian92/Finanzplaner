@@ -1,5 +1,14 @@
 Finanzplan::Application.routes.draw do
 
+
+
+  get "home/impressum"
+
+	get "welcome/index"
+	root :to => "welcome#index"
+
+  get "home/index"
+
   ActiveAdmin.routes(self)
 
   resources :finanzs
@@ -8,11 +17,12 @@ Finanzplan::Application.routes.draw do
   devise_for :users
 
    def after_sign_in_path_for(resource)
-
         "http://localhost:3000/finanzs"
 
     end
   root :to => "home#index"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

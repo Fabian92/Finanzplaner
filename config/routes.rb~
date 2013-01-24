@@ -1,5 +1,7 @@
 Finanzplan::Application.routes.draw do
 
+  get "home/index"
+
   ActiveAdmin.routes(self)
 
   resources :finanzs
@@ -12,7 +14,7 @@ Finanzplan::Application.routes.draw do
         "http://localhost:3000/finanzs"
 
     end
-  root :to => "users/sign_up"
+  root :to => "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
