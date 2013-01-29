@@ -8,9 +8,12 @@ class Ability
             can :manage, :all
         else
             #Registered users
+            #can :read, Finanz, :users => user
             can :create, Finanz
-            can :manage, Finanz do |finanz|
-          finanz.users.include? user
+            #can :read, Finanz, :active => true, :user_id => user.id
+            #can :manage, Finanz, :user => user
+            #can :manage, Finanz do |finanz|
+          #finanz.users.include? user
       end
         end
     else
@@ -18,7 +21,7 @@ class Ability
         can :read, :all
     end
 end
-end
+#end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
