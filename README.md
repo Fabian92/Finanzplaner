@@ -5,8 +5,13 @@ Hinweis: Befehle immer unter den Punkten, diese müssen sie im Terminal ausführ
 
 1. Projekt pullen / Herunterladen 
 
-   git clone git@github.com:Fabian92/Finanzplaner.git
+	Wenn SSH aktiviert:
 
+   git clone git@github.com:Fabian92/Finanzplaner.git 
+
+   Wenn nicht:
+
+   git clone https:/github.com/Fabian92/Finanzplaner.git
 
 2. Gems installieren 
 
