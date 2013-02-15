@@ -1,11 +1,14 @@
 Finanzplan::Application.routes.draw do
 
 
+  get "impressum/index"	
 
-  get "impressum/index"
-	root :to =>"impressum#index"
+  get "finanzs/index"
+
   get "home/index"
-	root :to => "home#index"
+  root :to => "home#index"
+
+
   ActiveAdmin.routes(self)
 
   resources :finanzs
