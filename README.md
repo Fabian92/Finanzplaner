@@ -24,6 +24,8 @@ Admindashboard ist unter diesem Link zufinden:
 http://localhost:3000/admin
 
 Anmeldedaten für Admin:
+
 Email: admin@example.com
+
 Password: hackme
 
