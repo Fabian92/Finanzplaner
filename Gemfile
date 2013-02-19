@@ -12,6 +12,7 @@ gem 'activeadmin'
 gem 'cancan'
 gem 'rolify'
 gem 'rb-readline'
+gem "paperclip", "~> 3.0"
 
 group :development, :test do
   gem 'rspec-rails'
