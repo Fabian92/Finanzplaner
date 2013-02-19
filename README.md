@@ -34,3 +34,5 @@ Email: admin@example.com
 
 Password: hackme
 
+Für Paperclip muss http://www.imagemagick.org/script/index.php installiert sein.
+
