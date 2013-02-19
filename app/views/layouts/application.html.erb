@@ -13,26 +13,36 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
 
-	<div class="span2" style= "padding-top:70px;">
+  <div class="container" >
+    <div class="row" >
 
-	<div class="navbar navbar-fixed-left">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	<div class="span2" style= "padding-top:100px;" >
+
+	<div class="navbar navbar-fixed-left" >
+    <div class="navbar-inner" >
+      <div class="container" >
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" >
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <div class="nav-collapse">
-          <ul class="nav">
-	          <li><%= link_to "Home" , home_index_path %> </li>
-            <li><%= link_to "Eingabe" , finanzs_index_path %></li>
-            <li><%= link_to "Berichte/Auswertung" %></li>
-            <li><%= link_to "Contact Us" %></li>
-            <li><%= link_to "Impressum", impressum_index_path %></li>
+
+        <div class="nav-collapse" >
+          <ul class="nav" >
+            <B><I><ul> Finanzplaner </ul></B></I>
+            <BR>
+            <BR>
+	          <ul><%= link_to "Home" , home_index_path %></ul>
+            <BR>
+            <ul><%= link_to "Eingabe" , finanzs_index_path %></ul>
+            <BR>
+            <ul><%= link_to "Berichte/Auswertung" %></ul>
+            <BR>
+            <ul><%= link_to "Contact Us" %></ul>
+            <BR>
+            <ul><%= link_to "Impressum", impressum_index_path %></ul>
+            <BR>
           </ul>
         </div>
       </div>
@@ -41,7 +51,7 @@
 </div>
 
       <div class="span8"><%= yield %></div>
-      <div class="span2" style= "padding-top:70px;">
+      <div class="span2" style= "padding-top:100px;">
         <h2>Login Sachen</h2>
         <% if current_user %>
 		<li> Welcome, <%= current_user.email %> ! </li>
