@@ -21,4 +21,9 @@ def authenticate_admin_user!
   	redirect_to new_user_session_path unless current_user && current_user.has_role?(:admin)
 end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to new_user_session_path, :alert => exception.message
+ 
+end
+
 end

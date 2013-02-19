@@ -8,7 +8,11 @@ class Ability
             can :manage, :all
         else
             #Registered users
+<<<<<<< HEAD
             can :read, Finanz, :users => user.id
+=======
+            #can :read, Finanz, :users => user.id
+>>>>>>> Jannik
             can :create, Finanz
            #can :read, Finanz, :active => true, :user_id => user.id
             #can :manage, Finanz, :user => user
@@ -18,7 +22,7 @@ class Ability
         end
     else
         #Guest users
-        can :read, :all
+        cannot  :read, :all
     end
 end
 end
