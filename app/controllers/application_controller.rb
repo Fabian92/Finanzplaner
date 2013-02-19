@@ -25,9 +25,3 @@ end
     redirect_to new_user_session_path, :alert => exception.message
  
 end
-
-def create
-  @user = User.create( params[:user] )
-end
-
-end
