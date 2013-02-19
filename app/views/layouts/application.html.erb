@@ -38,7 +38,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
       <div class="span8"><%= yield %></div>
@@ -46,7 +45,9 @@
         <h2>Login Sachen</h2>
         <% if current_user %>
 		<li> Welcome, <%= current_user.email %> ! </li>
-		<li> <%= link_to 'Abmelden', destroy_user_session_path, method: :delete %> </li>
+    <li> <%= link_to "Change your password / Email", edit_user_registration_path %> </li>
+		<B><li> <%= link_to 'Abmelden', destroy_user_session_path, method: :delete %> </li></B>
+
 	<% else %>
 		<li> <%= link_to "Anmelden" , new_user_session_path %> </li>
 	<% end %>

@@ -5,6 +5,6 @@ class Finanz < ActiveRecord::Base
 	validates :Wert,
           :numericality => true
 
-    has_many :user_finanzs
+    has_many :user_finanzs 
     has_many :users, through: :user_finanzs
 end

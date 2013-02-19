@@ -16,8 +16,14 @@ Finanzplan::Application.routes.draw do
 
   devise_for :users
 
+  devise_for :users, :skip => [:registrations]
+
    def after_sign_in_path_for(resource)
         root :to => "finanz#index"
+    end
+  
+  def after_edit_user_registration_path_for(resource)
+        root :to => "home#index"
     end
   
 
