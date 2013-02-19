@@ -18,7 +18,7 @@ class Ability
         end
     else
         #Guest users
-        can :read, :all
+        cannot  :read, :all
     end
 end
 end
