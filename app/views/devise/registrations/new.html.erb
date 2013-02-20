@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
 
   <div><%= f.label :email %><br />
@@ -12,8 +12,16 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+<!--<p> <%= f.label :upload_a_avatar %> </p>
+<%= f.fields_for :asset do |f| %>
+  <p>
+   <%= f.file_field :assets %>
+</p>
+
+  <% end %>-->
+
+
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>
-
 <%= render "devise/shared/links" %>

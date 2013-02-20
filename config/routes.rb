@@ -6,6 +6,9 @@ Finanzplan::Application.routes.draw do
   get "finanzs/index"
 
   get "home/index"
+
+  get "public/index"
+  
   root :to => "home#index"
 
 

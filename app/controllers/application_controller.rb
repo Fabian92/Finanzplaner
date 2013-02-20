@@ -25,3 +25,14 @@ end
     redirect_to new_user_session_path, :alert => exception.message
  
 end
+
+def new
+  @user = User.new
+  5.times { @user.assets.build }
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    5.times { @user.assets.build }
+end
+end
