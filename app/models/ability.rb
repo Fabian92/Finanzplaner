@@ -8,11 +8,13 @@ class Ability
             can :manage, :all
         else
             #Registered users
-            can :read, Finanz, :users => user.id
+            can :read, Finanz do |finanz|
+          finanz.users.include? user
+      end
 
             #can :read, Finanz, :users => user.id
 
-            can :create, Finanz
+            can :create, Finanz 
            #can :read, Finanz, :active => true, :user_id => user.id
             #can :manage, Finanz, :user => user
             can :manage, Finanz do |finanz|

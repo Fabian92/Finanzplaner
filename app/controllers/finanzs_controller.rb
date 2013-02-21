@@ -43,6 +43,7 @@ class FinanzsController < ApplicationController
   # POST /finanzs.json
   def create
     @finanz = Finanz.new(params[:finanz])
+    @finanz.users << current_user
 
     respond_to do |format|
       if @finanz.save
