@@ -10,6 +10,7 @@ class Ability
             #Registered users
             can :read, Finanz do |finanz|
           finanz.users.include? user
+
       end
 
             #can :read, Finanz, :users => user.id
