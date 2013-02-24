@@ -1,0 +1,2 @@
+module FinanzpositionsHelper
+end

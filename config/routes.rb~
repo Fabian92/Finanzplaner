@@ -1,23 +1,43 @@
 Finanzplan::Application.routes.draw do
 
 
+  resources :finanzpositions
+  root :to => "finanzpositions#index"
 
-  get "impressum/index"
+  resources :fianzens
+  root :to => "fianzens#index"
+
+  get "finanzens/index"
+  get  "finanzpositions/index"
+  get "impressum/index"	
+
+  get "finanzs/index"
 
   get "home/index"
+
+  get "public/index"
+  
+  root :to => "home#index"
+
 
   ActiveAdmin.routes(self)
 
   resources :finanzs
-
+  resources :finanzens
+  resources :finanzpositions	
 
   devise_for :users
 
-   def after_sign_in_path_for(resource)
-        "http://localhost:3000/finanzs"
+  devise_for :users, :skip => [:registrations]
 
+   def after_sign_in_path_for(resource)
+        root :to => "finanz#index"
     end
-  root :to => "home#index"
+  
+  def after_edit_user_registration_path_for(resource)
+        root :to => "home#index"
+    end
+  
 
 
   # The priority is based upon order of creation:

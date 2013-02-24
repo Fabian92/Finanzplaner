@@ -1,6 +1,14 @@
 Finanzplan::Application.routes.draw do
 
 
+  resources :finanzpositions
+  root :to => "finanzpositions#index"
+
+  resources :fianzens
+  root :to => "fianzens#index"
+
+  get "finanzens/index"
+  get  "finanzpositions/index"
   get "impressum/index"	
 
   get "finanzs/index"
@@ -15,8 +23,9 @@ Finanzplan::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :finanzs
-
-
+  resources :finanzens
+  resources :finanzpositions	
+  resources :contact_messages
   devise_for :users
 
   devise_for :users, :skip => [:registrations]

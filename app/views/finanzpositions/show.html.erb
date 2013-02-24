@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Finanzennr:</b>
+  <%= @finanzposition.FinanzenNr %>
+</p>
+
+<p>
+  <b>Art:</b>
+  <%= @finanzposition.Art %>
+</p>
+
+<p>
+  <b>Beschreibung:</b>
+  <%= @finanzposition.Beschreibung %>
+</p>
+
+<p>
+  <b>Wert:</b>
+  <%= @finanzposition.Wert %>
+</p>
+
+
+<%= link_to 'Edit', edit_finanzposition_path(@finanzposition) %> |
+<%= link_to 'Back', finanzpositions_path %>

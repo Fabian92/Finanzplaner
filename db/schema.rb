@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220103429) do
+ActiveRecord::Schema.define(:version => 20130224140254) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(:version => 20130220103429) do
     t.integer  "user_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "fianzens", :force => true do |t|
+    t.date     "Datum"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "finanzpositions", :force => true do |t|
+    t.integer  "FinanzenNr"
+    t.string   "Art"
+    t.string   "Beschreibung"
+    t.float    "Wert"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "zahlungsart_id"
   end
 
   create_table "finanzs", :force => true do |t|
@@ -96,5 +112,11 @@ ActiveRecord::Schema.define(:version => 20130220103429) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "zahlungsarts", :force => true do |t|
+    t.string   "Art"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

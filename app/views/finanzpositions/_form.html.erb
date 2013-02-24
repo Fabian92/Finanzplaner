@@ -1,0 +1,33 @@
+<%= form_for(@finanzposition) do |f| %>
+  <% if @finanzposition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@finanzposition.errors.count, "error") %> prohibited this finanzposition from being saved:</h2>
+
+      <ul>
+      <% @finanzposition.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :FinanzenNr %><br />
+    <%= f.number_field :FinanzenNr %>
+  </div>
+  <div class="field">
+    <%= f.label :Art %><br />
+    <%= f.text_field :Art %>
+  </div>
+  <div class="field">
+    <%= f.label :Beschreibung %><br />
+    <%= f.text_field :Beschreibung %>
+  </div>
+  <div class="field">
+    <%= f.label :Wert %><br />
+    <%= f.text_field :Wert %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

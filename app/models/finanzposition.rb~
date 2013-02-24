@@ -1,0 +1,4 @@
+class Finanzposition < ActiveRecord::Base
+  attr_accessible :Art, :Beschreibung, :FinanzenNr, :Wert
+  belongs_to :finanzen
+end

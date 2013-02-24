@@ -1,0 +1,2 @@
+class FianzensController < InheritedResources::Base
+end

@@ -1,4 +1,8 @@
 Finanzplan::Application.configure do
+
+  # Konfiguration fürs Senden einer Email
+  config.action_mailer.delivery_method = :sendmail
+ 
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
