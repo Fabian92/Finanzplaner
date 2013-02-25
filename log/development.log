@@ -2568,3 +2568,139 @@ Completed 302 Found in 31ms (ActiveRecord: 0.4ms)
 
 Started GET "/assets/rails.png" for 127.0.0.1 at 2013-01-14 15:30:27 +0100
 Served asset /rails.png - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (78.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20121218095311)
+Migrating to CreateFinanzs (20130114130939)
+Migrating to CreateFinanzkopfs (20130225173709)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "finanzkopfs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "datum" date, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130225173709')[0m
+  [1m[35m (31.6ms)[0m  commit transaction
+Migrating to FinanzkopfNrHinzufuegen (20130225174155)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "finanzs" ADD "finanzkopfnr" integer
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130225174155')[0m
+  [1m[35m (16.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-02-25 18:46:22 +0100
+Served asset /rails.png - 200 OK (19ms)
+
+
+Started GET "/finanzs" for 127.0.0.1 at 2013-02-25 18:46:48 +0100
+Processing by FinanzsController#index as HTML
+  [1m[36mFinanz Load (0.1ms)[0m  [1mSELECT "finanzs".* FROM "finanzs" [0m
+  Rendered finanzs/index.html.erb within layouts/application (40.4ms)
+  Rendered shared/_navigation.html.erb (1.3ms)
+Compiled application.css  (1ms)  (pid 3267)
+Compiled application.js  (46ms)  (pid 3267)
+Completed 200 OK in 771ms (Views: 663.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-25 18:46:49 +0100
+Served asset /application.css - 200 OK (6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:49 +0100
+Served asset /jquery.js - 200 OK (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-25 18:46:49 +0100
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:49 +0100
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/finanzs.css?body=1" for 127.0.0.1 at 2013-02-25 18:46:49 +0100
+Served asset /finanzs.css - 200 OK (2ms)
+
+
+Started GET "/assets/finanzs.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:49 +0100
+Served asset /finanzs.js - 200 OK (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:49 +0100
+Served asset /application.js - 200 OK (7ms)
+
+
+Started GET "/finanzs/1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Processing by FinanzsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFinanz Load (0.2ms)[0m  SELECT "finanzs".* FROM "finanzs" WHERE "finanzs"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered finanzs/show.html.erb within layouts/application (1.4ms)
+  Rendered shared/_navigation.html.erb (0.5ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/finanzs.css?body=1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Served asset /finanzs.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/finanzs.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Served asset /finanzs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-25 18:46:58 +0100
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/finanzs/1/edit" for 127.0.0.1 at 2013-02-25 18:47:01 +0100
+Processing by FinanzsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFinanz Load (0.1ms)[0m  [1mSELECT "finanzs".* FROM "finanzs" WHERE "finanzs"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered finanzs/_form.html.erb (300.3ms)
+  Rendered finanzs/edit.html.erb within layouts/application (303.4ms)
+  Rendered shared/_navigation.html.erb (0.6ms)
+Completed 200 OK in 389ms (Views: 387.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-02-25 18:47:02 +0100
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/finanzs.js?body=1" for 127.0.0.1 at 2013-02-25 18:47:02 +0100
+Served asset /finanzs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-02-25 18:47:02 +0100
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-02-25 18:47:02 +0100
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-02-25 18:47:02 +0100
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-02-25 18:47:02 +0100
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/finanzs.css?body=1" for 127.0.0.1 at 2013-02-25 18:47:02 +0100
+Served asset /finanzs.css - 304 Not Modified (0ms)
