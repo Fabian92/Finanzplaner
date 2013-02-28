@@ -1,0 +1,4 @@
+class Finanzen < ActiveRecord::Base
+  attr_accessible :datum
+  has_many :finanzposition
+end

@@ -1,0 +1,3 @@
+class Finanzen < ActiveRecord::Base
+  attr_accessible :datum
+end

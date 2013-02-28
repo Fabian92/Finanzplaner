@@ -8,7 +8,7 @@ Finanzplan::Application.routes.draw do
   root :to => "fianzens#index"
 
   get "finanzens/index"
-  get  "finanzpositions/index"
+  get "finanzpositions/index"
   get "impressum/index"	
 
   get "finanzs/index"
@@ -18,14 +18,15 @@ Finanzplan::Application.routes.draw do
   get "public/index"
   
   root :to => "home#index"
-
+  get "contact_us/view1"
+  root :to => "contact_us/view1"
 
   ActiveAdmin.routes(self)
 
-  resources :finanzs
   resources :finanzens
   resources :finanzpositions	
-
+  resources :contact_messages
+  resources :finanzs
   devise_for :users
 
   devise_for :users, :skip => [:registrations]

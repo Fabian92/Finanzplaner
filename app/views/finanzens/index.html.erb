@@ -1,0 +1,23 @@
+<h1>Listing finanzens</h1>
+
+<table>
+  <tr>
+    <th>Datum</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @finanzens.each do |finanzen| %>
+  <tr>
+    <td><%= finanzen.datum %></td>
+    <td><%= link_to 'Show', finanzen %></td>
+    <td><%= link_to 'Edit', controller=>"finanzpositions", :action=>"show" %></td>
+    <td><%= link_to 'Destroy', finanzen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Finanzen', new_finanzen_path %>
