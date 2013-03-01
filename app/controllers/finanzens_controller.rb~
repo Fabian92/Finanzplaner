@@ -1,14 +1,13 @@
 class FinanzensController < InheritedResources::Base
   # GET /finanzens
   # GET /finanzens.json
-   load_and_authorize_resource
+   #load_and_authorize_resource
 
   def index
-    @finanzen = Finanzen.all
-
+      @finanzen = Finanzen.all
       respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @finanzens }
+      format.json { render json: @finanzen }
     end
   end
 

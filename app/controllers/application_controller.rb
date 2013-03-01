@@ -17,6 +17,10 @@ class ApplicationController < ActionController::Base
         "http://localhost:3000/home/index"
     end
 
+def after_create_finanzen(resource) 
+	root :to => "finanzposition#index"
+end
+
 def authenticate_admin_user!
   	redirect_to new_user_session_path unless current_user && current_user.has_role?(:admin)
 end

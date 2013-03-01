@@ -5,8 +5,8 @@ Finanzplan::Application.routes.draw do
   resources :finanzpositions
   root :to => "finanzpositions#index"
 
-  resources :fianzens
-  root :to => "fianzens#new"
+  resources :finanzens
+  root :to => "finanzens#new"
 
   get "finanzens/new"
   get "finanzpositions/index"
@@ -29,7 +29,7 @@ Finanzplan::Application.routes.draw do
   devise_for :users
 
   devise_for :users, :skip => [:registrations]
-
+  
    def after_sign_in_path_for(resource)
         root :to => "home#index"
     end

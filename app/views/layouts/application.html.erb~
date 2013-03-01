@@ -35,7 +35,7 @@
             <BR>
 	          <ul><%= link_to "Home" , home_index_path %></ul>
             <BR>
-            <ul><%= link_to "Eingabe", :controller => "fianzens", :action => "new"  %></ul>
+            <ul><%= link_to "Eingabe", new_finanzen_pat  %></ul>
             <BR>
             <ul><%= link_to "Berichte/Auswertung" %></ul>
             <BR>
