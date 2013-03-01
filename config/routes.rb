@@ -1,17 +1,19 @@
 Finanzplan::Application.routes.draw do
 
 
+  resources :contact_messages
+
+
   resources :finanzpositions
   root :to => "finanzpositions#index"
 
   resources :fianzens
-  root :to => "fianzens#index"
+  root :to => "fianzens#new"
 
-  get "finanzens/index"
+  get "finanzens/new"
   get "finanzpositions/index"
   get "impressum/index"	
 
-  get "finanzs/index"
 
   get "home/index"
 
@@ -26,13 +28,12 @@ Finanzplan::Application.routes.draw do
   resources :finanzens
   resources :finanzpositions	
   resources :contact_messages
-  resources :finanzs
   devise_for :users
 
   devise_for :users, :skip => [:registrations]
 
    def after_sign_in_path_for(resource)
-        root :to => "finanz#index"
+        root :to => "home#index"
     end
   
   def after_edit_user_registration_path_for(resource)

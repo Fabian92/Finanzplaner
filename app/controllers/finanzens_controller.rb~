@@ -1,7 +1,7 @@
 class FinanzensController < InheritedResources::Base
   # GET /finanzens
   # GET /finanzens.json
-   #load_and_authorize_resource
+   load_and_authorize_resource
 
   def index
     @finanzen = Finanzen.all
@@ -36,7 +36,7 @@ class FinanzensController < InheritedResources::Base
 
   # GET /finanzens/1/edit
   def edit
-    @finanzen = Finanzen.find(params[:id])
+    #@finanzen = Finanzen.find(params[:id])
   end
 
   # POST /finanzens

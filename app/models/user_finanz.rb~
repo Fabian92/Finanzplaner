@@ -1,0 +1,5 @@
+class UserFinanz < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :finanzen
+  # attr_accessible :title, :body
+end

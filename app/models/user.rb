@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   belongs_to :user
   has_many :user_finanzs
-  has_many :finanz , through: :user_finanzs
+  has_many :finanzens , through: :user_finanzs
  
   has_many :assets
 

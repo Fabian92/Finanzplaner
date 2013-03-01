@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   def after_sign_in_path_for(resource)
 
-        "http://localhost:3000/finanzs"
+        "http://localhost:3000/home/index"
 
  end
 
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
  end
 
    def after_edit_user_registration_path_for(resource)
-        "http://localhost:3000/finanzs"
+        "http://localhost:3000/home/index"
     end
 
 def authenticate_admin_user!

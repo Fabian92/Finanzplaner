@@ -8,17 +8,17 @@ class Ability
             can :manage, :all
         else
             #Registered users
-            can :read, Finanz do |finanz|
+            can :read, Finanzen do |finanz|
           finanz.users.include? user
       end
 
-            #can :read, Finanz, :users => user.id
+            #can :read, Finanzen, :users => user.id
 
-            can :create, Finanz 
-           #can :read, Finanz, :active => true, :user_id => user.id
-            #can :manage, Finanz, :user => user
-            can :manage, Finanz do |finanz|
-          finanz.users.include? user
+            can :create, Finanzen 
+           #can :read, Finanzen, :active => true, :user_id => user.id
+            #can :manage, Finanzen, :user => user
+            can :manage, Finanzen do |finanz|
+          finanzen.users.include? user
       end
         end
     else

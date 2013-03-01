@@ -11,16 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :FinanzenNr %><br />
-    <%= f.number_field :FinanzenNr %>
-  </div>
+ 
   <div class="field">
     <%= f.label :Art %><br />
-    <%= f.text_field :Art %>
+<%= f.select :Art, [['Einzahlung','Einzahlung'],['Auszahlung/Ausgabe','Ausgabe']] %>
   </div>
   <div class="field">
-    <%= f.label :Beschreibung %><br />
+    <%= f.label :Position %><br />
     <%= f.text_field :Beschreibung %>
   </div>
   <div class="field">

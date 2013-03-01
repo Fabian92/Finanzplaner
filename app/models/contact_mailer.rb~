@@ -1,10 +1,10 @@
 class ContactMailer < ActionMailer::Base
 
   def confirmation(sent_at = Time.now)
-    @subject    = 'Ihre Kontaktnachrichten erhalten'
+    @subject    = 'ContactMailer#confirmation'
     @body       = {}
-    @recipients = email
-    @from       = 'fabianwessling@web.de'
+    @recipients = ''
+    @from       = ''
     @sent_on    = sent_at
     @headers    = {}
   end
@@ -12,10 +12,9 @@ class ContactMailer < ActionMailer::Base
   def message(sent_at = Time.now)
     @subject    = 'ContactMailer#message'
     @body       = {}
-    @recipients = 'fabianwessling@web.de'
-    @from       = 'fabianwessling@web.de'
+    @recipients = ''
+    @from       = ''
     @sent_on    = sent_at
     @headers    = {}
   end
-
 end
