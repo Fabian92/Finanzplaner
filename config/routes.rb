@@ -23,13 +23,13 @@ Finanzplan::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  resources :finanzens
+  
   resources :finanzpositions	
   resources :contact_messages
   devise_for :users
 
   devise_for :users, :skip => [:registrations]
-
+  resources :finanzens
    def after_sign_in_path_for(resource)
         root :to => "home#index"
     end
