@@ -1,2 +1,54 @@
-<h1>Impressum#index</h1>
-<p>Find me in app/views/impressum/index.html.erb</p>
+<html>
+<title>Impressum</title>
+<body>
+<h1>Impressum</h1>
+<br>
+<p>
+
+
+Angaben gemäß § 5 TMG:
+
+Stiftung
+Musterstrasse
+48143 Münster
+Vertreten durch:
+
+Fabian Weßling
+Jannik van Schaik
+David Göttl
+Kontakt:
+
+Telefon:
+	
+
+12345/6789
+
+Telefax:
+	
+
+E-Mail:
+	
+
+info@stiftung.de
+Registereintrag:
+
+Eintragung im Handelsregister.
+Registergericht:Münster
+Registernummer: 4444444555
+Umsatzsteuer-ID:
+
+Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:
+6664545
+Aufsichtsbehörde:
+
+Stadt Münster
+
+Berufsbezeichnung: anderer Beruf
+Zuständige Kammer:
+Verliehen durch:
+Es gelten folgende berufsrechtliche Regelungen:
+Regelungen einsehbar unter: 
+</p>
+
+</body>
+</html>
