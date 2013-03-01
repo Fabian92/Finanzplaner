@@ -3,15 +3,17 @@ Finanzplan::Application.routes.draw do
 
   resources :contact_messages
   resources :finanzpositions
-  root :to => "finanzpositions#index"
+  
 
   resources :finanzens
-  root :to => "finanzens#new"
 
+
+  resources :finanzens
+ get "finanzens/index"
   get "finanzens/new"
   get "finanzpositions/index"
   get "impressum/index"	
-
+  get "finanzen/auswertung"
 
   get "home/index"
 
@@ -19,7 +21,7 @@ Finanzplan::Application.routes.draw do
   
   root :to => "home#index"
   get "contact_us/view1"
-  root :to => "contact_us#view1"
+  
 
   ActiveAdmin.routes(self)
 
@@ -37,7 +39,9 @@ Finanzplan::Application.routes.draw do
   def after_edit_user_registration_path_for(resource)
         root :to => "home#index"
     end
-  
+  def after_create_finanzen(resource) 
+	root :to => "finanzposition#index"
+end
 
 
   # The priority is based upon order of creation:

@@ -4,10 +4,11 @@ class FinanzensController < InheritedResources::Base
    #load_and_authorize_resource
 
   def index
-      @finanzen = Finanzen.all
+      Finanzen.all
+      @finanzens = Finanzen.where("FinanzenNr = 2")
       respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @finanzen }
+      format.json { render json: @finanzens }
     end
   end
 

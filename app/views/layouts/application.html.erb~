@@ -35,9 +35,9 @@
             <BR>
 	          <ul><%= link_to "Home" , home_index_path %></ul>
             <BR>
-            <ul><%= link_to "Eingabe", new_finanzen_pat  %></ul>
+            <ul><%= link_to "Eingabe", new_finanzen_path  %></ul>
             <BR>
-            <ul><%= link_to "Berichte/Auswertung" %></ul>
+            <ul><%= link_to "Berichte/Auswertung","/finanzen" %></ul>
             <BR>
             <ul><%= link_to "Contact Us" %></ul>
             <BR>

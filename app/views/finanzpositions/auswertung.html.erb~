@@ -1,0 +1,19 @@
+Auswertung
+<h1>Listing finanzpositions</h1>
+
+<table>
+  <tr>
+    <th>Art</th>
+    <th>Beschreibung</th>
+    <th>Wert</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+
+</table>
+
+<br />
+
+<%= link_to 'New Finanzposition', new_finanzposition_path %>

@@ -1,0 +1,29 @@
+<h1>Listing finanzpositions</h1>
+
+<table>
+  <tr>
+    <th>Finanzennr</th>
+    <th>Art</th>
+    <th>Beschreibung</th>
+    <th>Wert</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @finanzpositions.each do |finanzposition| %>
+  <tr>
+    
+    <td><%= finanzposition.Art %></td>
+    <td><%= finanzposition.Beschreibung %></td>
+    <td><%= finanzposition.Wert %></td>
+    <td><%= link_to 'Show', finanzposition %></td>
+    <td><%= link_to 'Edit', edit_finanzposition_path(finanzposition) %></td>
+    <td><%= link_to 'Destroy', finanzposition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Finanzposition', new_finanzposition_path %>

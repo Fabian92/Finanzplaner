@@ -2,10 +2,16 @@ class FinanzpositionsController < InheritedResources::Base
 	 # GET /finanzpositions
   # GET /finanzpositions.json
    #load_and_authorize_resource
-
+def auswertung
+@finanzpositions = Finanzposition.all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @finanzpositions }
+ end
+end
   def index
-    @finanzpositions = Finanzposition.all
-
+    #@finanzpositions = Finanzposition.where("FinanzenNr = ?", @finanzens  )
+@finanzpositions = Finanzposition.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @finanzpositions }
@@ -15,7 +21,7 @@ class FinanzpositionsController < InheritedResources::Base
   # GET /finanzpositions/1
   # GET /finanzpositions/1.json
   def show
-    @finanzposition = Finanzposition.find(:all)
+    @finanzposition = Finanzposition.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @finanzposition }
@@ -43,7 +49,7 @@ class FinanzpositionsController < InheritedResources::Base
   def create
     @finanzposition = Finanzposition.new(params[:finanzposition])
     #@finanzposition.users << current_user
-
+    #@finanzposition.FinanzenNr << current_finanzens
     respond_to do |format|
       if @finanzposition.save
         format.html { redirect_to @finanzposition, notice: 'finanzposition was successfully created.' }

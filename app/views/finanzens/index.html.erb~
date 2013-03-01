@@ -11,8 +11,8 @@
 <% @finanzens.each do |finanzen| %>
   <tr>
     <td><%= finanzen.datum %></td>
-    <td><%= link_to 'Show', finanzen %></td>
-    <td><%= link_to 'Edit',controller=>"finanzpositions", :action=>"show" %></td>
+    <td><%= link_to 'Anzeigen', "/finanzpositions/auswertung" %></td>
+    <td><%= link_to 'Edit', finanzen%></td>
     <td><%= link_to 'Destroy', finanzen, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>

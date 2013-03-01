@@ -3,15 +3,17 @@ Finanzplan::Application.routes.draw do
 
   resources :contact_messages
   resources :finanzpositions
-  root :to => "finanzpositions#index"
+  
 
   resources :finanzens
-  root :to => "finanzens#new"
 
+
+  resources :finanzens
+ get "finanzens/index"
   get "finanzens/new"
   get "finanzpositions/index"
   get "impressum/index"	
-
+  get "finanzposition/auswertung"
 
   get "home/index"
 
@@ -19,7 +21,7 @@ Finanzplan::Application.routes.draw do
   
   root :to => "home#index"
   get "contact_us/view1"
-  root :to => "contact_us#view1"
+  
 
   ActiveAdmin.routes(self)
 
