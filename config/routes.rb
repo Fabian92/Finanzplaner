@@ -2,8 +2,6 @@ Finanzplan::Application.routes.draw do
 
 
   resources :contact_messages
-
-
   resources :finanzpositions
   root :to => "finanzpositions#index"
 
